@@ -6,16 +6,11 @@ server:
   volumes:
     - .TeamCity:/root/.BuildServer
   links:
-   - mysql
-mysql:
-  image: alexanderilyin/docker-mysql
+   - db
+db:
+  build: db
   volumes:
-    - .MySQL:/var/lib/mysql
-  environment:
-    MYSQL_DATABASE: teamcity
-    MYSQL_USER: teamcity
-    MYSQL_PASSWORD: teamcity
-    MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    - .postgres:/var/lib/postgresql/data
 agent:
   privileged: true
   image: alexanderilyin/docker-teamcity-agent
