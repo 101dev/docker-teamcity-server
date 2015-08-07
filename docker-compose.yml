@@ -1,6 +1,6 @@
 server:
   mem_limit: 4g
-  image: alexanderilyin/docker-teamcity-server
+  build: .
   expose:
    - "8111"
   volumes:
