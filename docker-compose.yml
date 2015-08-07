@@ -1,4 +1,5 @@
 server:
+  restart: always
   mem_limit: 4g
   build: .
   expose:
@@ -8,16 +9,19 @@ server:
   links:
    - db
 db:
+  restart: always
   build: db
   volumes:
     - .postgres:/var/lib/postgresql/data
 agent:
+  restart: always
   privileged: true
   image: alexanderilyin/docker-teamcity-agent
   command: -u 'http://server:8111/'
   links:
    - server
 nginx:
+  restart: always
   image: quay.io/aptible/nginx
   environment:
     - UPSTREAM_SERVERS=server:8111
