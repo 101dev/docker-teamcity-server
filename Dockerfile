@@ -1,6 +1,6 @@
 FROM java
 
-MAINTAINER Alexander Ilyin <alexander@ilyin.eu>
+MAINTAINER Naftoli Gugenheim <naftoli@1on1development.com>
 
 # TEAMCITY INTERNAL ENVIRONMENT VARIABLES
 ENV TEAMCITY_DATA_PATH /root/.BuildServer
