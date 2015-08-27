@@ -20,6 +20,8 @@ agent:
   command: -u 'http://server:8111/'
   links:
    - server
+  volumes:
+   - /var/run/docker.sock:/var/run/docker.sock
 nginx:
   restart: always
   image: quay.io/aptible/nginx
