@@ -15,8 +15,8 @@ db:
     - .postgres:/var/lib/postgresql/data
 agent:
   restart: always
+  build: agent
   privileged: true
-  image: alexanderilyin/docker-teamcity-agent
   command: -u 'http://server:8111/'
   links:
    - server
