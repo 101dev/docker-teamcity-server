@@ -1,3 +1,4 @@
+#!/bin/bash -x
 set -e
 
 BUILD_AGENT_PROPERTIES_DEFAULT_FILE=/opt/buildAgent/conf/buildAgent.dist.properties
