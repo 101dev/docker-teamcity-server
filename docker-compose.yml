@@ -27,9 +27,8 @@ nginx:
   image: quay.io/aptible/nginx
   environment:
     - UPSTREAM_SERVERS=server:8111
-    - FORCE_SSL=true
   links:
     - server
   ports:
     - 443:443
-    - 80:80
+    - 10.132.21.200:80:80
